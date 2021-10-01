@@ -159,4 +159,4 @@ app.delete('/product/delete/:id', (req,res) => {
 
 });
 
-module.exports = {app, productBuilder};
+module.exports = {app, productBuilder, db};

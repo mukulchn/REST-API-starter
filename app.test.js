@@ -17,7 +17,7 @@ describe('GET requests', () => {
 
 });
 
-// TEST THE REST API ENDPOINT FOR PUT
+// TEST THE REST API ENDPOINT FOR POST
 describe('CREATE request', () => {
     
     test('CREATE product test', async () => {

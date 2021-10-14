@@ -29,3 +29,13 @@ http://34.78.146.136:8080/
 
 ticked jenkins github webhook polling...
 http://34.78.146.136:8080/github-webhook/
+
+5,6,7,8
+gcloud auth activate-service-account sa-mkc-vm-gcr@training-325404.iam.gserviceaccount.com --key-file=training-325404-d4b1ebf9fa72.json
+
+[USERNAME]@[PROJECT-ID].iam.gserviceaccount.com.
+
+gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
+
+cat $CREDS | docker login -u _json_key --password-stdin https://gcr.io
+

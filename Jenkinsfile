@@ -16,7 +16,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 //
-		sh "echo 'Deployment starting...building docker img'"
 		sh "docker build -t nodeapp:v${BUILD_NUMBER} .
             }
         }

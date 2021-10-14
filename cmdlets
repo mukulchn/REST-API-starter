@@ -27,4 +27,5 @@ initial admin password: ac65aec214cf468e89d903727264b5ea
 
 http://34.78.146.136:8080/
 
-
+ticked jenkins github webhook polling...
+http://34.78.146.136:8080/github-webhook/

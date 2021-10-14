@@ -1,0 +1,30 @@
+git@github.com:mukulchn/d7-10-gcp-proj.git
+
+https://github.com/mukulchn/d7
+
+sudo apt-get update
+sudo apt install curl -y
+curl https://get.docker.com | sudo bash
+sudo usermod -aG docker $(whoami)
+#close shell
+
+git clone https://github.com/mukulchn/REST-API-starter.git
+cd REST-API-starter
+
+docker build -t nodeapp .
+
+
+docker run -d -p 8080:8080 --name nodeapp-ins nodeapp
+docker ps -a
+docker rmi nodeapp
+
+3. Configuration of an application
+docker run -d -p 8080:8081 -e PORT=8081  --name nodeapp1 nodeapp:v1
+
+
+4. Setting up Jenkins CI pipeline
+initial admin password: ac65aec214cf468e89d903727264b5ea
+
+http://34.78.146.136:8080/
+
+

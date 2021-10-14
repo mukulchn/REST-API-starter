@@ -16,7 +16,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 //
-		sh "docker build -t nodeapp:v${BUILD_NUMBER} .
+		sh "echo 'Deployment yet to be sorted'"
+		sh "docker build -t nodeapp:v${BUILD_NUMBER} ."
             }
         }
     }

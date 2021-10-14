@@ -16,6 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 //
+		sh "echo 'Deployment yet to be sorted'"
             }
         }
     }

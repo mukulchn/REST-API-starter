@@ -208,4 +208,37 @@ added below command to Jenkins file, check Jenkinsfile for more details.
   docker push gcr.io/training-325404/nodeapp-mukul:v10
 ~~~
 
+### Creating GCP GKE cluster
+
+Below command I ran from cloud shell to create GKE cluster (dont want to use user auth on VM)
+
+~~~ bash
+gcloud container clusters create k8-cluster-mukul --num-nodes=2 --machine-type=n1-standard-1 --zone=europe-west2-b
+~~~
+
+now Install kubectl to communicate with a Kubernetes cluster. 
+This step is done on the GCP VM which is used as client through out this course.
+
+Also, created service account sa-mkc-gke-auth@training-325404.iam.gserviceaccount.com with GKE admin, etc roles.
+
+~~~ bash
+  curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+  ls -ltr
+  sudo chmod +x /usr/local/bin/kubectl 
+  sudo mv ./kubectl /usr/local/bin/kubectl 
+  kubectl
+  gcloud auth activate-service-account sa-mkc-gke-auth@training-325404.iam.gserviceaccount.com --key-file=training-325404-6e9760bc1e2f-gke.json
+  gcloud container clusters get-credentials k8-cluster-mukul --zone=europe-west2-b
+~~~
+
+last command sets up kubeconfig for cluster.
+
+### Deploy app container into GCP GKE cluster
+
+added service account sa-mkc-gke-auth@training-325404.iam.gserviceaccount.com to Jenkins as credential >> Secret file
+
+Added Deployment and Service(type Loadbalancer) manifests with image built from jenkins, this auto updates the version, using sed to do this. Updated Jenkinsfile, please check for more details. This has got sed to 
+
+This page is in progress of updates...some commands may not be in order as rushing currently. Hope you enjoyed. 
+
 

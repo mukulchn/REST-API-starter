@@ -9,7 +9,7 @@ The project touches on modern teck stack of javascript, nodeJs, REST, Microservi
 This is also a try to acquaint the developer with version control (git), day-to-day and some advanced git commands, comfort at applying this version control process, branching, reverting etc.
 
 
-## Installation
+## Part 1 - Installation
 
 To initialise the project you will need to install several dependencies, open up a git bash terminal from the repo directory and run the command:
 
@@ -43,7 +43,7 @@ API Listening on http://localhost:9090
 
 n.b: For these commands anything surrounded by angled braces <> needs to be replaced by you
 
-### CREATE
+#### CREATE
 
 To create the example product run the command:
 
@@ -51,7 +51,7 @@ To create the example product run the command:
 $ curl -s -X POST http://localhost:8080/product/create -H 'Content-type:application/json' -d '{"name":"example product", "description":"this is an example", "price":9.99}'
 ~~~
 
-### READ (all)
+#### READ (all)
 
 To read all of the products run the command:
 
@@ -59,7 +59,7 @@ To read all of the products run the command:
 $ curl -s -X GET http://localhost:8080/product/read
 ~~~
 
-### READ (one)
+#### READ (one)
 
 To read one of the products run the command:
 
@@ -67,7 +67,7 @@ To read one of the products run the command:
 $ curl -s -X GET http://localhost:8080/product/read/<id>
 ~~~
 
-### UPDATE
+#### UPDATE
 
 To update one of the products run the command:
 
@@ -75,7 +75,7 @@ To update one of the products run the command:
 $ curl -s -X PUT http://localhost:8080/product/update/<id> -H 'Content-type:application/json'  -d '{"name":"updated product", "description":"its brand new", "price":99.99}'
 ~~~
 
-### DELETE
+#### DELETE
 
 To delete one of the products run the command:
 
@@ -83,10 +83,50 @@ To delete one of the products run the command:
 $ curl -s -X DELETE http://localhost:8080/product/delete/<id>
 ~~~
 
-## Testing
+### Testing
 
 To run tests, from the terminal run the command:
 
 ~~~ bash
 $ npm test
 ~~~
+
+## Part 2 - Dockerisation of an application
+
+Install docker:
+
+~~~ bash
+$     sudo apt-get update
+$     sudo apt install curl -y
+$     curl https://get.docker.com | sudo bash
+$     id
+$     sudo usermod -aG docker $(whoami)
+$     id
+$     whoami
+$     id
+~~~
+
+You will need to log off and log on back to take the group change take place.
+
+## Write Dockerfile, build image and run locally with docker
+
+In order to run the application, from your git bash terminal run:
+
+~~~ bash
+   touch Dockerfile
+   ls -ltr
+   vi Dockerfile 
+   touch .dockerignore
+   vi .dockerignore 
+   docker build -t nodeapp .
+   sudo usermod -aG docker $(whoami)
+   id
+   docker build -t nodeapp .
+   exit
+   id
+   cd REST-API-starter/
+   docker build -t nodeapp .
+   docker images
+   docker run -d -p 8080:8080 --name nodeapp nodeapp-ins
+   docker run -d -p 8080:8080 --name nodeapp-ins nodeapp
+   ~~~

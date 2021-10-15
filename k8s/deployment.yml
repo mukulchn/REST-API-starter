@@ -9,6 +9,11 @@ spec:
     matchLabels:
       app: nodeapp
   replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
   template:
     metadata:
       labels:
@@ -16,7 +21,7 @@ spec:
     spec:
       containers:
       - name: nodeapp
-        image: gcr.io/training-325404/nodeapp-mukul:v9
+        image: gcr.io/training-325404/nodeapp-mukul:vVERSION
         ports:
         - containerPort: 8080
 ---

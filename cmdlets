@@ -39,3 +39,303 @@ gcloud auth print-access-token | docker login -u oauth2accesstoken --password-st
 
 cat $CREDS | docker login -u _json_key --password-stdin https://gcr.io
 
+9.
+gcloud container clusters create k8-cluster-mukul --num-nodes=2 --machine-type=n1-standard-1 --zone=europe-west2-b
+gcloud container clusters get-credentials k8-cluster-mukul --zone=europe-west2-b
+
+
+   1  git
+    2  docker
+    3  sudo apt-get update
+    4  sudo apt install curl -y
+    5  curl https://get.docker.com | sudo bash
+    6  id
+    7  sudo usermod -aG docker $(whoami)
+    8  id
+    9  whoami
+   10  id
+   11  git clone git@github.com:mukulchn/REST-API-starter.git
+   12  git clone https://github.com/mukulchn/REST-API-starter.git
+   13  cd REST-API-starter/
+   14  ls -ltr
+   15  touch Dockerfile
+   16  ls -ltr
+   17  vi Dockerfile 
+   18  touch .dockerignore
+   19  vi .dockerignore 
+   20  docker build -t nodeapp .
+  21  sudo usermod -aG docker $(whoami)
+   22  id
+   23  docker build -t nodeapp .
+   24  exit
+   25  id
+   26  cd REST-API-starter/
+   27  docker build -t nodeapp .
+   28  docker images
+   29  docker run -d -p 8080:8080 --name nodeapp nodeapp-ins
+   30  docker run -d -p 8080:8080 --name nodeapp-ins nodeapp
+   31  curl 34.78.146.136:8080
+   32  curl localhost:8080
+   33  docker logs nodeapp-ins
+   34  ls -ltr
+   35  vi package.json 
+   36  docker ls
+   37  docker ps
+   38  docker images
+   39  docker rmi nodeapp
+   40  docker ps -a
+   41  docker rm nodeapp-ins
+   42  docker ps -a
+   43  docker rmi nodeapp
+   44  docker images
+   45  docker build -t nodeapp .
+   46  docker run -d -p 8080:8080 --name nodeapp-ins nodeapp
+   47  docker ps -a
+   48  ls -ltr
+   49  touch build.sh
+   50  vi build.sh 
+   51  cat .git/config 
+   52  ls -ltr
+   53  vi build.sh 
+   54  ls -ltr
+   55  chmod 764 build.sh 
+   56  ls -ltr
+   57  chmod 755 build.sh 
+   58  ls -ltr
+   59  ./build.sh 
+   60  vi build.sh 
+   61  ./build.sh 
+   62  vi build.sh
+   63  ./build.sh 
+   64  vi build.sh 
+   65  ./build.sh 
+   66  vi build.sh 
+   67  ./build.sh 
+   68  vi build.sh 
+   69  docker images
+   70  ./build.sh 
+   71  ./build.sh 1
+   72  docker images
+   73  vi build.sh 
+   74  ./build.sh 1
+   75  docker images
+   76  docker rmi nodeapp      
+   77  docker rmi nodeapp:v
+   78  docker rmi nodeapp:latest
+   79  docker ps -a
+   80  docker stop 3ed5840fdc2c
+   81  docker rm 3ed5840fdc2c
+   82  docker ps -a
+   83  docker rmi nodeapp:latest
+   84  docker images
+   85  ls -ltr
+   86  vi app.js 
+   87  vi start.js 
+   88  docker run -d -p 8080:8081 -e PORT=8081  --name nodeapp1 nodeapp:v1
+   89  docker ps -a
+   90  docker stop nodeapp1
+   91  docker rm nodeapp1
+   92  docker ps -a
+   93  docker run -d -p 8080:8080 -e PORT=8081  --name node1 nodeapp:v1
+   94  docker ps -a
+   95  docker stop node1
+   96  docker rm node1
+   97  pwd
+   98  ls -ltr
+   99  touch install_jenkins.sh
+  100  ls -ltr
+  101  chmod 754 install_jenkins.sh 
+  102  ls -ltr
+  103  chmod 755 install_jenkins.sh
+  104  ls -ltr
+  105  vi install_jenkins.sh 
+  106  ./install_jenkins.sh 
+  107  vi install_jenkins.sh 
+  108  pwd
+  109  cd .git
+  110  vi config 
+  111  git status
+  112  cd ..
+  113  git status
+  114  git add .
+  115  git status
+  116  git commit -m "MK: exercise 1,2,3"
+  117  git config --global user.email "mukul_chn@hotmail.com"
+  118  git config --global user.name "mukulchn"
+  119  git commit -m "MK: exercise 1,2,3"
+  120  git push origin main
+  121  ssh-keygen -t rsa -f ~/.ssh/id_rsa <<< y
+  122  cat ~/.ssh/id_rsa.pub 
+  123  git push origin main
+  124  touch cmdlets
+  125  vi cmdlets
+  126  git status
+  127  docker
+  128  sudo usermod -aG docker jenkins
+  129  id
+  130  sudo su - jenkins
+  131  ls -ltr
+  132  sudo su - jenkins
+  133  sudo systemctl restart jenkins
+  134  docker images
+  135  docker rmi nodeapp:v1
+  136  docker images
+  137  ls -ltr
+  138  git status
+  139  git add .
+  140  git commit -m "MC: ex 4.. cmdlets used"
+  141  git push origin main
+  142  ls -ltr
+  143  touch Jenkinsfile
+  144  vi Jenkinsfile 
+  145  ls -ltr
+  146  git status
+  147  vi Jenkinsfile 
+  148  pwd
+  149  curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+  150  sudo apt-get install -y nodejs
+  151  node
+  152  pwd
+  153  ls -ltr
+  154  npm
+  155  npm start
+  156  npm install
+  157  npm start
+  158  PORT=8089 npm start 
+  159  npm test
+  160  vi Jenkinsfile 
+  161  ls -ltr
+  162  git status
+  163  git add .
+  164  git commit -m "MC: ex4...scm pipeline, jenkinsfile, run"
+  165  git push origin main
+  166  vi Jenkinsfile 
+  167  git status
+  168  git add .
+  169  git commit -m "MC: ex4...updated jenkinsfile"
+  170  git push origin main
+  171  git status
+  172  vi cmdlets 
+  173  git add .
+  174  git status
+  175  git commit -m "MC: ex4...updated cmdlets"
+  176  git push origin main
+  177  vi build.sh 
+  178  vi Jenkinsfile 
+  179  git add .
+  180  git commit -m "MC: ex4...updated jenkinsfile"
+  181  git push origin main
+  182  vi Jenkinsfile 
+  183  git add .
+  184  git commit -m "MC: ex4...updated jenkinsfile"
+  185  git push origin main
+  186  vi Jenkinsfile
+   187  git add .
+  188  git commit -m "MC: ex4...updated jenkinsfile"
+  189  git push origin main
+  190  docker images
+  191  docker tag nodeapp:10 gcr.io/training-325404/nodeappm:10
+  192  docker images
+  193  docker tag nodeapp:v10 gcr.io/training-325404/nodeappm:v10
+  194  docker push gcr.io/training-325404/nodeappm:v10
+  195  id
+  196  echo ${USER}
+  197  sudo usermod -a -G docker ${USER}
+  198  gcloud
+  199  gcloud iam service-accounts create sa-mukul-gcr
+  200  docker images
+  201  docker run -d -p 5000:8080 --name nodeapp-ins nodeapp
+  202  docker run -d -p 5000:8080 --name nodeapp-ins nodeapp:v10
+  203  docker ps -a
+  204  vi app.js 
+  205  docker ps -a
+  206  docker stop c7acc50f031e   
+  207  docker rm c7acc50f031e   
+  208  docker ps -a
+  209  gcloud auth configure-docker
+  210  docker push gcr.io/training-325404/nodeappm:v10
+  211  ls
+  212  ls -ltr
+  213  pwd
+  214  cd ..
+  215  ls -ltr
+  216  pwd
+  217  cd REST-API-starter/
+  218  gcloud auth activate-service-account sa-mkc-vm-gcr@training-325404.iam.gserviceaccount.com --key-file=training-325404-d4b1ebf9fa72.json
+  219  gcloud auth activate-service-account sa-mkc-vm-gcr@training-325404.iam.gserviceaccount.com --key-file=../training-325404-d4b1ebf9fa72.json
+  220  gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
+  221  docker push gcr.io/training-325404/nodeappm:v10
+  222  ls -ltr
+  223  ls -ltr ./..
+  224  gcloud auth activate-service-account sa-mkc-vm-gcr@training-325404.iam.gserviceaccount.com --key-file=../training-325404-6dd42a3f7e0d.json
+  225  gcloud auth activate-service-account sa-mkc-vm-gcr-1@training-325404.iam.gserviceaccount.com --key-file=../training-325404-6dd42a3f7e0d.json
+  226  gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://gcr.io
+  227  docker push gcr.io/training-325404/nodeappm:v10
+  228  ls -ltr
+  229  cd ..
+  230  ls -ltr
+  231  rm training-325404-d4b1ebf9fa72.json
+  232  ls -ltr
+  233  chmod 400 training-325404-6dd42a3f7e0d.json 
+  234  ls -ltr
+  235  cat training-325404-6dd42a3f7e0d.json 
+  236  docker tag nodeapp:v10 gcr.io/training-325404/nodeapp-mukul:v10
+  237  docker push gcr.io/training-325404/nodeapp-mukul:v10
+  238  pwd
+  239  cd REST-API-starter/
+  240  vi Jenkinsfile 
+  241  git status
+  242  git diff
+  243  git add .
+  244  git commit -m "MC: updated...ex8..mod Jenkins for gcp service account, push to gcr"
+  245  git push origin main
+  246  vi cmdlets 
+  247  git add .
+  248  git commit -m "MC: updated...ex...8"
+  249  git push origin main
+  250  gcloud
+  251  gcloud auth login
+  252  vi cmdlet
+  253  pwd
+  254  ls -ltr
+  255  vi cmdlets 
+  256  gcloud container clusters get-credentials k8-cluster-mukul --zone=europe-west2-b
+  257  curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+  258  ls -ltr
+  259  sudo mv ./kubectl /usr/local/bin/kubectl 
+  260  kubectl
+  261  sudo chmod +x /usr/local/bin/kubectl 
+  262  kubectl
+  263  kubectl config view
+  264  gcloud auth login
+  265  pwd
+  266  ls -ltr
+  267  gcloud auth activate-service-account sa-mkc-gke-auth@training-325404.iam.gserviceaccount.com --key-file=training-325404-6e9760bc1e2f-gke.json
+  268  sudo chmod +x /usr/local/bin/kubectl gcloud container clusters get-credentials k8-cluster-mukul --zone=europe-west2-b
+  269  gcloud container clusters get-credentials k8-cluster-mukul --zone=europe-west2-b
+  270  cat ~/.kube/config 
+  271  pwd
+  272  ls -ltr
+  273  chmod 400 training-325404-6e9760bc1e2f-gke.json 
+  274  ls -ltr
+  275  kubectl get nodes
+  276  pwd
+  277  id
+  278  ls -ltr
+  279  cd REST-API-starter/
+  280  ls -ltr
+  281  mkdir k8s
+  282  cd k8s/
+  283  touch deployment.yml
+  284  vi deployment.yml 
+  285  kubectl get nodes
+  286  ls -ltr
+  287  kubectl get pods
+  288  kubectl get deployments
+  289  kubectl apply -f ./deployment.yml 
+  290  kubectl get deployments
+  291  kubectl get pods
+  292  kubectl describe pods nodeapp-9997b9dcf-vc8pk
+  293  kubectl get pods
+  294  kubectl get deployments
+  295  kubectl get svc

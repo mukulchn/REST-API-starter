@@ -194,7 +194,7 @@ Check Jenkinsfile for pipeline details.
 
 This step requird a Service Account to be created in GCP IAM.
 Roles:
-Storage Object Admin
+Storage Object Admin, 
 Storage Admin
 
 ~~~ bash
@@ -227,7 +227,7 @@ gcloud container clusters create k8-cluster-mukul --num-nodes=2 --machine-type=n
 now Install kubectl to communicate with a Kubernetes cluster. 
 This step is done on the GCP VM which is used as client through out this course.
 
-Also, created service account sa-mkc-gke-auth@training-325404.iam.gserviceaccount.com with GKE admin, etc roles.
+Also, created service account sa-mkc-gke-auth@training-325404.iam.gserviceaccount.com with Compute Admin, Kubernetes Engine Admin, Service Account Token Creator, Service Account User, Storage Admin
 
 ~~~ bash
   curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl

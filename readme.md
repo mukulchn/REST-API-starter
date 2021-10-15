@@ -7,6 +7,7 @@ The REST API Starter project is a hands-on task to apply the knowledge gained du
 The project touches on modern teck stack of javascript, nodeJs, REST, Microservices, JSON, TDD, testing using JEST and builds a project using REST/ Microservices architecture pattern.
 
 Part 1 is a try to acquaint the developer with version control (git), day-to-day and some advanced git commands, comfort at applying this version control process, branching, reverting etc.
+
 Part 2 is a try to touch of docker, containers, jenkins, devops, webhooks, GCP, GKE, service accounts etc. It's quite lot in a short time but a very good attempt to learn and adopt.
 
 

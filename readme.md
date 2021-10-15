@@ -176,6 +176,14 @@ This step is to download and install a Jenkins server on your local machine, Ini
 
 Check Jenkinsfile for pipeline details.
 
+#### Configure your pipeline to run tests and build an application on every Git commit.
+This step required setting up webhook in github repo, so goto  repo>>settings>>webhooks and paste below (IP will change for you)
+http://34.78.146.136:8080/github-webhook/
+Content-Type: application/json
+
+This also requires the jenkins pipeline flag set for 
+[]GitHub hook trigger for GITScm polling 
+
 ### Building docker image in Jenkins
 
 This step is to Modify an existing Jenkins pipeline to build Docker image of an application on every commit to the main/master branch.
